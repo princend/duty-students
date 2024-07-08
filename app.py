@@ -24,6 +24,11 @@ def filter_weekend(data):
 def hello():
     return 'ok'
 
+@app.route('/notify')
+def dutyStudentsNotify():
+    job1()
+    return 'ok'
+
 
 def line_notify(msg):
     token = 'uRt31oA2Uw5HiRVEjwHuI1BhlkpzEvQG8zWL03kHXyw'  # 填入你的token
@@ -65,9 +70,9 @@ def job1():
     
 
 
-scheduler = BlockingScheduler(timezone="Asia/Shanghai")
-scheduler.add_job(job1, 'cron', day_of_week='1-5', hour=8, minute=50)
-scheduler.start()
+# scheduler = BlockingScheduler(timezone="Asia/Shanghai")
+# scheduler.add_job(job1, 'cron', day_of_week='1-5', hour=8, minute=50)
+# scheduler.start()
 
 if __name__ == '__main__':
     server_port = os.environ.get('PORT', '8080')
