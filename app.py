@@ -57,7 +57,8 @@ def job1():
        # 获取 JSON 数据
        data = response.json()
        # 过滤后的数据
-       filtered_data = filter_weekend(data)
+    #    filtered_data = filter_weekend(data)
+       filtered_data = data
        now = datetime.now()
        formatted_date = now.strftime("%Y-%m-%d")
        result = next((data for data in filtered_data if data['日期'] == formatted_date), None)
